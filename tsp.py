@@ -1,7 +1,6 @@
 from haversine import haversine, Unit
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
-from flask import Blueprint, request, jsonify
 
 # Fungsi untuk membuat matriks jarak
 def create_distance_matrix(places):
