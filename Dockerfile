@@ -1,17 +1,17 @@
-# Use an official Python runtime as a parent image
+# Gunakan base image Python
 FROM python:3.9-slim
 
-# Set the working directory
+# Set work directory
 WORKDIR /app
 
-# Copy project files
-COPY . /app
+# Salin file requirements
+COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port
-EXPOSE 8080
+# Salin seluruh kode
+COPY . .
 
-# Command to run the application
-CMD ["python", "app.py"]
+# Set entrypoint Flask
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
